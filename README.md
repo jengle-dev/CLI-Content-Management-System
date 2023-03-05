@@ -2,10 +2,11 @@
 A command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
 ## Installation
+* npm init -y
 * npm i
-* npm install --save inquirer
+* npm i inquirer@8.2.4
 * npm install console-table-printer --save
-* npm install mysql  
+* npm install mysql2  
 
 ## Usage
 The following steps will help guide the user through the CLI for the Content Managment System for this application with the below valid CLI prompt responses.

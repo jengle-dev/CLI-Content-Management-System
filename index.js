@@ -1,4 +1,4 @@
-const inquirer = require('/node_modules/inquirer/lib/inquirer.js');
+const inquirer = require('inquirer');
 // Import and require mysql2
 const mysql = require('mysql2');
 const {printTable} = require("console-table-printer");
@@ -19,56 +19,27 @@ const db = mysql.createConnection(
     console.log(`Connected to the human_resources_db database.`)
   );
   
-  // Connect to server
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${host}:${port}/`);
-  });
-
+  //console.Table is a module package
   // Show console questions
-  const questions = [
-    {
-      type: 'input',
-      name: 'first_question',
-      message: 'What would you like to do?',
-      async validate() {
-        await new Promise((r) => setTimeout(r, 3000));
-        return true;
-      },
-      async filter(answer) {
-        await new Promise((r) => setTimeout(r, 3000));
-        return `filtered${answer}`;
-      },
-      filteringText: 'Filtering your answer...',
-      validatingText: 'Validating what you wrote...',
-    },
-    {
-      type: 'input',
-      name: 'second_question',
-      message: 'What is the name of the new department?',
-      async validate() {
-        await new Promise((r) => setTimeout(r, 3000));
-        return true;
-      },
-      async filter(answer) {
-        await new Promise((r) => setTimeout(r, 3000));
-        return `filtered${answer}`;
-      },
-    },
-    {
-        type: 'input',
-        name: 'third_question',
-        message: 'What is the name of the new role?',
-        async validate() {
-          await new Promise((r) => setTimeout(r, 3000));
-          return true;
-        },
-        async filter(answer) {
-          await new Promise((r) => setTimeout(r, 3000));
-          return `filtered${answer}`;
-        },
-      },
-  ];
-  
+ 
+import inquirer from '../lib/inquirer.js';
+
+inquirer
+  .prompt({
+    type: 'list',
+    name: 'chocolate',
+    message: "What's your favorite chocolate?",
+    choices: ['Mars', 'Oh Henry', 'Hershey'],
+  })
+  .then(() => {
+    inquirer.prompt({
+      type: 'list',
+      name: 'beverage',
+      message: 'And your favorite beverage?',
+      choices: ['Pepsi', 'Coke', '7up', 'Mountain Dew', 'Red Bull'],
+    });
+  });
+  //can pass in an array of objects in the below variable questions instead, 
   inquirer.prompt(questions).then((answers) => {
     console.log(JSON.stringify(answers, null, '  '));
   });

@@ -1,11 +1,26 @@
 {
-    "name": "hr-content-management-system",
-    "version": "0.0.1",
-    "description": "A command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.",
-    "main": "index.js",
-    "dependencies": {
-        "console-table-printer": "^2.11.1",
-        "inquirer": "^9.1.4",
-        "mysql": "^2.18.1"
-    }
+  "name": "hr-content-management-system",
+  "version": "0.0.1",
+  "description": "A command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.",
+  "main": "index.js",
+  "dependencies": {
+    "console-table-printer": "^2.11.1",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jengle-dev/CLI-Content-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jengle-dev/CLI-Content-Management-System/issues"
+  },
+  "homepage": "https://github.com/jengle-dev/CLI-Content-Management-System#readme"
 }
