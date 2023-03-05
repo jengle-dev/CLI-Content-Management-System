@@ -1,0 +1,6 @@
+{
+    "name": "hr-content-management-system", 
+    "version": "0.0.1", 
+    "description": "A command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.", 
+    "main": "index.js"
+  }
