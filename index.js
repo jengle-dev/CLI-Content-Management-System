@@ -35,24 +35,25 @@ inquirer
             'Create a New Employee Entry',
             'Update an Employee',
             'Update a Manager',
-            // 'View Employees by Manager',
-            // 'View Employees by Department',
-            // 'Delete a Department/Role/Employee',
-            // 'View Budget Information'
-        ],
-    })
-    .then(() => {
-        inquirer.prompt({
-            type: 'list',
-            name: 'additionalOptions',
-            message: 'What other option would you like to do?',
-            choices: ['View Employees by Manager',
+            'View Employees by Manager',
             'View Employees by Department',
             'Delete a Department/Role/Employee',
-            'View Budget Information'],
+            'View Budget Information'
+        ],
+    })
+    .then((userSelection) => {
+        console.log('Answer:', userSelection.options);
+
+        //attempt at switch statement to go through choices of inquirer.prompt
+
+        // SQL Queries
+        // Query database for All fields from department table
+        db.query('SELECT * FROM department', function (err, results) {
+            console.log(results);
+        });
+
+        // Query database for All fields from role table
+        db.query('SELECT * FROM role', function (err, results) {
+            console.log(results);
         });
     });
-//can pass in an array of objects in the below variable questions instead, 
-inquirer.prompt(questions).then((answers) => {
-    console.log(JSON.stringify(answers, null, '  '));
-});

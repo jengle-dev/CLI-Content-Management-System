@@ -3,10 +3,10 @@ VALUES ("Human Resources"),
     ("Finance"),
     ("Customer Service"),
     ("Training & Development"),
-    ("Marketing")
+    ("Marketing"),
     ("Technology");
 
-INSERT INTO roles (title, salary, department)
+INSERT INTO role (title, salary, department)
 VALUES ("Hiring Specialist", 42000, 1),
     ("Corporate Accountant", 58000, 2);
     -- ("Internal Audit", 2),
