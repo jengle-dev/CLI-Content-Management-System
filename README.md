@@ -26,7 +26,7 @@ To create a new role:
 To create a new employee entry:
 *
 
-To update an employee entry:
+To update an employee:
 *
 
 To  update employee managers:
@@ -50,4 +50,5 @@ To view combined salaries and utilized budge of a department:
 * https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/examples/filter-validate-progress.js
 * https://www.javatpoint.com/nodejs-mysql-insert-record
 * https://www.javatpoint.com/nodejs-mysql-create-connection
-* 
+* https://www.npmjs.com/package/inquirer?activeTab=explore
+*
