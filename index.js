@@ -48,8 +48,39 @@ inquirer
     switch (userSelection) {
       case 0:
         // to View All Departments
+        ;
+      case 1:
+        // to View All Employee Roles
+        ;
+      case 2:
+        // to View All Employee Data
+        ;
+      case 3:
+        //to Create a New Role
+        ;
+      case 4:
+        // to Create a New Employee Entry
+        ;
+      case 5:
+        // to Update an Employee
+        ;
+      case 6:
+        // to Update a Manager
+        ;
+      case 7:
+        // to View Employees by Manager
+        ;
+      case 8:
+        // to View Employees by Department
+        ;
+      case 9:
+        // to Delete a Department/Role/Employee
+        ;
+      case 10:
+        // to View Budget Info
+        ;
       default:
-
+        // No selection or error
     }
     // SQL Queries
     // Query database for All fields from department table
