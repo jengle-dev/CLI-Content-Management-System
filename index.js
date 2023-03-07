@@ -48,6 +48,7 @@ inquirer
     switch (userSelection) {
       case 0:
         // to View All Departments
+        viewAllDepartments();
         ;
       case 1:
         // to View All Employee Roles
@@ -80,13 +81,15 @@ inquirer
         // to View Budget Info
         ;
       default:
-        // No selection or error
+      // No selection or error
     }
     // SQL Queries
     // Query database for All fields from department table
-    db.query('SELECT * FROM department', function (err, results) {
-      console.log(results);
-    });
+    function viewAllDepartments() {
+      db.query('SELECT * FROM department', function (err, results) {
+        console.log(results);
+      });
+    };
 
     // Query database for All fields from role table
     db.query('SELECT * FROM role', function (err, results) {
