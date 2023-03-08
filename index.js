@@ -46,44 +46,47 @@ inquirer
 
     //attempt at switch statement to go through choices of inquirer.prompt
     switch (userSelection) {
-      case 0:
+      case 'View All Departments':
         // to View All Departments
         viewAllDepartments();
         ;
-      case 1:
+      case 'View All Employee Roles':
         // to View All Employee Roles
         ;
-      case 2:
+      case 'View All Employee Data':
         // to View All Employee Data
         ;
-      case 3:
+      case 'Create a New Role':
         //to Create a New Role
         ;
-      case 4:
+      case 'Create a New Employee Entry':
         // to Create a New Employee Entry
         ;
-      case 5:
+      case 'Update an Employee':
         // to Update an Employee
         ;
-      case 6:
+      case 'Update a Manage':
         // to Update a Manager
         ;
-      case 7:
+      case 'View Employees by Manager':
         // to View Employees by Manager
         ;
-      case 8:
+      case 'View Employees by Department':
         // to View Employees by Department
         ;
-      case 9:
+      case 'Delete a Department/Role/Employee':
         // to Delete a Department/Role/Employee
         ;
-      case 10:
+      case 'View Budget Info':
         // to View Budget Info
         ;
       default:
       // No selection or error
     }
-    // SQL Queries
+    
+  });
+
+  // SQL Queries
     // Query database for All fields from department table
     function viewAllDepartments() {
       db.query('SELECT * FROM department', function (err, results) {
@@ -92,7 +95,22 @@ inquirer
     };
 
     // Query database for All fields from role table
+    function viewAllRoles() {
     db.query('SELECT * FROM role', function (err, results) {
       console.log(results);
-    });
-  });
+    })
+  };
+
+  // Query database for All Employees Table
+    function viewAllEmployees() {
+      db.query('SELECT * FROM employee', function(err, results){
+        console.log(results);
+      })
+    };
+
+  // Query database for All Employees Table
+  function viewAllEmployees() {
+    db.query('SELECT * FROM employee', function(err, results){
+      console.log(results);
+    })
+  };
