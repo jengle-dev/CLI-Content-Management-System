@@ -46,3 +46,6 @@ There is no license for this project.
 
 ## URL to GitHub Repo
 * https://github.com/jengle-dev/CLI-Content-Management-System
+
+## Project Status
+This project is incomplete. I have additional SQL queries and formatting of returned data to the CLI.
