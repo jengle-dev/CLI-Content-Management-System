@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 // Import and require mysql2
 const mysql = require('mysql2');
+const { Sequelize } = require('sequelize');
 const { printTable } = require("console-table-printer");
 
 PORT = 3001;
@@ -12,7 +13,7 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // TODO: Add MySQL password here
-    password: '?6NC2tjY!e!5Ddc',
+    password: process.env.MYSQL_PASSWORD,
     database: 'human_resources_db',
     multipleStatements: true
   },
@@ -30,7 +31,6 @@ inquirer
     choices: [
       'View All Departments',
       'View All Employee Roles',
-      'View All Employee Data',
       'Create a New Role',
       'Create a New Employee Entry',
       'Update an Employee',
@@ -49,68 +49,69 @@ inquirer
       case 'View All Departments':
         // to View All Departments
         viewAllDepartments();
-        ;
+        break;
       case 'View All Employee Roles':
         // to View All Employee Roles
-        ;
-      case 'View All Employee Data':
-        // to View All Employee Data
-        ;
+        viewAllRoles();
+        break;
       case 'Create a New Role':
         //to Create a New Role
-        ;
+        addRole();
+        break;
       case 'Create a New Employee Entry':
         // to Create a New Employee Entry
-        ;
+        addEmployee();
+        break;
       case 'Update an Employee':
         // to Update an Employee
-        ;
-      case 'Update a Manage':
+        updateEmployee();
+        break;
+      case 'Update a Manager':
         // to Update a Manager
-        ;
+        updateManager();
+        break;
       case 'View Employees by Manager':
         // to View Employees by Manager
-        ;
+        viewByManager();
+        break;
       case 'View Employees by Department':
         // to View Employees by Department
-        ;
+        viewByDepartment();
+        break;
       case 'Delete a Department/Role/Employee':
         // to Delete a Department/Role/Employee
-        ;
+        deleteRecord();
+        break;
       case 'View Budget Info':
         // to View Budget Info
-        ;
-      default:
+        viewBudget();
+        break;
+
       // No selection or error
+      default:
+        console.log("Please make a selection.")
     }
-    
+  }).catch(err => console.log(err));
+
+// SQL Queries
+// Query database for All fields from department table
+function viewAllDepartments() {
+  db.query('SELECT * FROM department', function (err, results) {
+    console.log(results);
   });
+};
 
-  // SQL Queries
-    // Query database for All fields from department table
-    function viewAllDepartments() {
-      db.query('SELECT * FROM department', function (err, results) {
-        console.log(results);
-      });
-    };
+// Query database for All fields from role table
+function viewAllRoles() {
+  db.query('SELECT * FROM role', function (err, results) {
+    console.log(results);
+  })
+};
 
-    // Query database for All fields from role table
-    function viewAllRoles() {
-    db.query('SELECT * FROM role', function (err, results) {
-      console.log(results);
-    })
-  };
 
-  // Query database for All Employees Table
-    function viewAllEmployees() {
-      db.query('SELECT * FROM employee', function(err, results){
-        console.log(results);
-      })
-    };
-
-  // Query database for All Employees Table
-  function viewAllEmployees() {
-    db.query('SELECT * FROM employee', function(err, results){
-      console.log(results);
-    })
-  };
+// Query database for All Employees Table
+function viewAllEmployees() {
+  db.query('SELECT * FROM employee', function (err, results) {
+    console.log(results);
+  })
+};
