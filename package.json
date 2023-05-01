@@ -11,7 +11,7 @@
     "url": "git+https://github.com/jengle-dev/CLI-Content-Management-System.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jennifer Engle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jengle-dev/CLI-Content-Management-System/issues"
@@ -20,6 +20,6 @@
   "dependencies": {
     "console-table-printer": "^2.11.1",
     "inquirer": "^8.2.4",
-    "mysql2": "^3.2.0"
+    "mysql2": "^3.2.4"
   }
 }
