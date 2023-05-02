@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 // Import and require mysql2
 const mysql = require('mysql2');
-const { Sequelize } = require('sequelize');
+// const { Sequelize } = require('sequelize');
 const { printTable } = require("console-table-printer");
 
 PORT = 3001;
@@ -13,7 +13,7 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // TODO: Add MySQL password here
-    password: process.env.MYSQL_PASSWORD,
+    password: process.env.DB_PASSWORD,
     database: 'human_resources_db',
     multipleStatements: true
   },
@@ -24,7 +24,7 @@ const db = mysql.createConnection(
 // Show console questions
 
 inquirer
-  .prompt({
+  .prompt([{
     type: 'list',
     name: 'options',
     message: "What would you like to do?",
@@ -40,12 +40,12 @@ inquirer
       'Delete a Department/Role/Employee',
       'View Budget Information'
     ],
-  })
-  .then((userSelection) => {
-    console.log('Answer:', userSelection.options);
-
+  }])
+  .then((answers) => {
+    console.log('Answer:', answers.options)
+    let choice = answers.options
     //attempt at switch statement to go through choices of inquirer.prompt
-    switch (userSelection) {
+    switch (choice) {
       case 'View All Departments':
         // to View All Departments
         viewAllDepartments();
