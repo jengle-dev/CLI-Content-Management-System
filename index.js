@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
+require ('dotenv').config();
 // Import and require mysql2
 const mysql = require('mysql2');
-// const { Sequelize } = require('sequelize');
 const { printTable } = require("console-table-printer");
 
 PORT = 3001;
@@ -17,8 +17,12 @@ const db = mysql.createConnection(
     database: 'human_resources_db',
     multipleStatements: true
   },
-  console.log(`Connected to the human_resources_db database.`)
+  // console.log(`Connected to the human_resources_db database.`)
 );
+
+db.connect(function(err){
+  if(err) throw err;
+});
 
 //console.Table is a module package
 // Show console questions
@@ -97,7 +101,7 @@ inquirer
 // Query database for All fields from department table
 function viewAllDepartments() {
   db.query('SELECT * FROM department', function (err, results) {
-    console.log(results);
+    console.table(results);
   });
 };
 
