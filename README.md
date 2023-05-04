@@ -32,6 +32,7 @@ A user will be able to go through command prompts to do the following:
 * https://www.javatpoint.com/nodejs-mysql-create-connection
 * https://www.npmjs.com/package/inquirer?activeTab=explore
 * https://sequelize.org/docs/v6/getting-started/
+* https://www.w3schools.com/sql/sql_constraints.asp
 * Reviewed coursework solved files.
 * ASKBCS help in Slack
 
